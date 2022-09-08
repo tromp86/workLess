@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@color:honeydew;
+@color-wrap:burlywood;
+html, body {
+    background-color: @color;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+}
+.robotoText{
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+.wrap{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    height: 30%;
+    margin: auto;
+    margin-top: calc(15% - 50px); 
+    background-color: @color-wrap;
+    border: 2px solid black;
+    .robotoText();
+}
+div{
+    border: 2px solid black;
+}
+//Mixins//
+.height-box{
+    height: calc(75% - 30px);
+    width: 250px;
+}
+
+.block-1{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .height-box();
+    background-color: crimson;
+}
+.block-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .height-box();
+    background-color:coral;
+}
+.block-3{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .height-box();
+    background-color:darkorange;
+}
+div:nth-child(even){
+    margin-left: 40px;
+    margin-right: 40px;
+}
+//Nesting// 
+.wrap{ 
+    color: honeydew;
+    .block-1 {
+    padding-left: 2%;
+    }
+    .block-3 {
+    padding-right: 2%;
+    }
+    .logo {
+    width: 300px;
+    }
+}
+body{
+    @media (max-width: 1000px){
+    &::before {
+        content: " less ";
+        display: block;
+        text-align: center;
+        .robotoText();
+    @media (max-width: 350px) {
+        visibility: hidden;
+}}}}
+
+.wrap {
+    @media (max-width: 1000px){
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media (max-width: 600px) {
+    height: 50%;
+    font-size: 30px;
+    @media (max-width: 250px) {
+    font-size: 20px;
+}}}}
+div:nth-child(even){
+    margin-left: 0px;
+    margin-right: 0px;
+}    
+.block-1{
+    @media (max-width: 1000px){
+    height: calc(45% - 30px);
+    width: calc(48% - 5px); 
+    margin-bottom: 15px;
+    @media (max-width: 600px) {  
+    height: calc(35% - 30px);
+    width: 100%; 
+    margin-bottom: 15px;     
+}}}
+.block-2{
+    @media (max-width: 1000px){
+    height: calc(45% - 30px);
+    width: calc(48% - 5px); 
+    margin-bottom: 15px;
+    margin-right: 15px;
+    @media (max-width: 600px) {  
+    height: calc(35% - 30px);
+    width: 100%; 
+    margin-bottom: 15px;     
+}}}
+.block-3{
+    @media (max-width: 1000px){
+    height: calc(45% - 30px);
+    width: 100%; 
+    @media (max-width: 600px) {  
+    height: calc(25% - 30px);
+    width: 100%; 
+    margin-bottom: 15px;       
+}}}
+
